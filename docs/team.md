@@ -7,15 +7,15 @@
 
 | Учасник | GitHub-акаунт |
 |---|---|
-| Вадим | [boshinomikoto] |
-| Максим | [kutenecmaks-sys] |
-| Олександр | [sanyamityev-alt] |
+| Вадим Сундєєв | [boshinomikoto] |
+| Максим Кутенець | [kutenecmaks-sys] |
+| Олександр Мітяєв | [sanyamityev-alt] |
 
 ## Розподіл відповідальності між учасниками (ЛР №2)
 
 | Учасник | Роль у навчальній зміні | Що підтверджує |
 |---|---|---|
-| Вадим | Автор зміни | гілка `docs/add-team-table`, коміт `docs: add team responsibilities`, опис Pull Request і реакція на зауваження рев'юєра |
-| Максим | Reviewer | перевірені файли Pull Request, змістовний коментар і рішення review (Approve) |
-| Олександр | Відповідальний за CI | правильний запуск GitHub Actions (workflow `CI`), читання job і step, пояснення успіху чи причини збою |
+| Вадим Сундєєв | Автор зміни | гілка `docs/add-team-table`, коміт `docs: add team responsibilities`, опис Pull Request і реакція на зауваження рев'юєра |
+| Максим Кутенець | Reviewer | перевірені файли Pull Request, змістовний коментар і рішення review (Approve) |
+| Олександр Мітяєв | Відповідальний за CI | правильний запуск GitHub Actions (workflow `CI`), читання job і step, пояснення успіху чи причини збою |
 | Вадим | Координатор репозиторію | доступи учасників (Settings → Collaborators), правила гілки `main`, актуальність `README.md` |
