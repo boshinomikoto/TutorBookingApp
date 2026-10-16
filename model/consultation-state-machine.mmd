@@ -1,0 +1,14 @@
+stateDiagram-v2
+    [*] --> Scheduled : створено (UC3)
+
+    Scheduled --> Completed : позначити проведеним, тема обов'язкова (UC5)
+    Scheduled --> Cancelled : скасувати (UC4)
+
+    Completed --> [*]
+    Cancelled --> [*]
+
+    note right of Scheduled
+        Лише записи у статусі Scheduled
+        враховуються при перевірці
+        перетину часу (FR-04)
+    end note
