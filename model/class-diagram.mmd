@@ -1,0 +1,27 @@
+classDiagram
+    class Student {
+        +int Id
+        +string FullName
+        +string Phone
+        +string Notes
+    }
+
+    class Consultation {
+        +int Id
+        +int StudentId
+        +DateTime StartDateTime
+        +int DurationMinutes
+        +ConsultationStatus Status
+        +string Topic
+        +string Notes
+    }
+
+    class ConsultationStatus {
+        <<enumeration>>
+        Scheduled
+        Completed
+        Cancelled
+    }
+
+    Student "1" --> "0..*" Consultation : має записи
+    Consultation --> ConsultationStatus : статус
