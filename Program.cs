@@ -1,45 +1,12 @@
-var tasks = new List<string>();
+using System;
 
-while (true)
+namespace TutorBookingApp
 {
-    Console.WriteLine();
-    Console.WriteLine("1 - додати завдання");
-    Console.WriteLine("2 - показати список");
-    Console.WriteLine("3 - вийти");
-    Console.Write("> ");
-
-    var choice = Console.ReadLine();
-
-    if (choice == "1")
+    internal static class Program
     {
-        Console.Write("Текст завдання: ");
-        var text = Console.ReadLine();
-        if (!string.IsNullOrWhiteSpace(text))
+        private static void Main(string[] args)
         {
-            tasks.Add(text);
-            Console.WriteLine("Додано.");
+            Console.WriteLine("TutorBookingApp — основа проєкту (ЛР №3).");
         }
-    }
-    else if (choice == "2")
-    {
-        if (tasks.Count == 0)
-        {
-            Console.WriteLine("Список порожній.");
-        }
-        else
-        {
-            for (int i = 0; i < tasks.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {tasks[i]}");
-            }
-        }
-    }
-    else if (choice == "3")
-    {
-        break;
-    }
-    else
-    {
-        Console.WriteLine("Не зрозумів, спробуй ще раз.");
     }
 }
