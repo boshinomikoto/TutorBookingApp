@@ -1,0 +1,16 @@
+sequenceDiagram
+    actor Р as Репетитор
+    participant К as Консольний клієнт
+    participant С as Сервер (TutorBookingApp.Api)
+
+    Р->>К: обрати "1 - Зареєструвати учня"
+    К->>К: ввести FullName, Phone
+    К->>С: POST /api/students
+    alt FullName порожнє
+        С-->>К: 400 full_name_required
+        К-->>Р: показати повідомлення про відмову
+    else успіх
+        С->>С: додати Student (Id = наступний)
+        С-->>К: 201 Created + StudentDto
+        К-->>Р: показати створеного учня
+    end

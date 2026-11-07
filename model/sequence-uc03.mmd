@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor Р as Репетитор
+    participant К as Консольний клієнт
+    participant С as Сервер (TutorBookingApp.Api)
+
+    Р->>К: обрати "2 - Створити запис"
+    К->>К: ввести StudentId, StartDateTime, DurationMinutes
+    К->>С: POST /api/consultations
+    alt тривалість <= 0
+        С-->>К: 400 invalid_duration
+    else учня не знайдено
+        С-->>К: 400 student_not_found
+    else перетин з активним записом (FR-04)
+        С->>С: перевірити перетин лише серед Status = Scheduled
+        С-->>К: 409 schedule_conflict
+    else успіх
+        С->>С: створити Consultation (Status = Scheduled)
+        С-->>К: 201 Created + ConsultationDto
+    end
+    К-->>Р: показати результат

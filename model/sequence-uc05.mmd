@@ -1,0 +1,19 @@
+sequenceDiagram
+    actor Р as Репетитор
+    participant К as Консольний клієнт
+    participant С as Сервер (TutorBookingApp.Api)
+
+    Р->>К: обрати "3 - Позначити проведеним"
+    К->>К: ввести Id запису, Topic
+    К->>С: POST /api/consultations/{id}/complete
+    alt Topic порожнє
+        С-->>К: 400 topic_required
+    else запис не знайдено
+        С-->>К: 404 consultation_not_found
+    else запис уже не Scheduled
+        С-->>К: 400 already_completed
+    else успіх
+        С->>С: Status = Completed, Topic = запит.Topic
+        С-->>К: 200 OK + ConsultationDto
+    end
+    К-->>Р: показати результат
