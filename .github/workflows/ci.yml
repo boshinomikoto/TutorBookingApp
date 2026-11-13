@@ -1,4 +1,3 @@
-cat > .github/workflows/ci.yml <<'EOF'
 name: CI
 
 on:
@@ -27,4 +26,3 @@ jobs:
 
       - name: Test
         run: dotnet test TutorBookingApp.sln --no-build --configuration Release
-EOF
